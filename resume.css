@@ -1,0 +1,255 @@
+/* Light mode (default) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f8fc;
+    color: #333;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  
+  /* Dark mode */
+  body.dark-mode {
+    background-color: #121212;
+    color: #f4f4f4;
+  }
+  
+  .dark-mode header {
+    background-color: #1f1f1f;
+  }
+  
+  .dark-mode .bordered-section {
+    background-color: #1e1e1e;
+    border-color: #00bfff;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  }
+  
+  .dark-mode nav a {
+    color: #00bfff;
+  }
+  
+  .dark-mode footer {
+    background-color: #1f1f1f;
+    color: #ccc;
+  }
+  
+  .dark-mode a {
+    color: #00bfff;
+  }
+  
+  header {
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    background-color: #007acc;
+    color: white;
+  }
+  
+  header nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s ease-in-out;
+  }
+  
+  .profile-img.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .typing-animation {
+    font-size: 2rem;
+    animation: typing 3s steps(20, end), blink-caret 0.5s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    display: inline-block;
+    max-width: 100%;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+  }
+  
+  section {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .bordered-section {
+    background-color: #ffffff;
+    border: 2px solid #007acc;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .gallery-item {
+    text-align: center;
+  }
+  
+  .gallery-item img {
+    max-width: 300px;
+    border-radius: 12px;
+    transition: transform 0.5s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gallery-item img:hover {
+    transform: scale(1.05);
+  }
+  
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #007acc;
+    color: white;
+    margin-top: 2rem;
+  }
+  
+  #theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #007acc;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  #theme-toggle:hover {
+    background-color: #005a99;
+  }
+  
+  .dark-mode #theme-toggle {
+    background-color: #333;
+    color: #00bfff;
+  }
+  /* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+      padding: 1.5rem 1rem;
+    }
+  
+    .typing-animation {
+      font-size: 1.5rem;
+    }
+  
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    nav a {
+      margin: 5px;
+      font-size: 0.95rem;
+    }
+  
+    .profile-img {
+      width: 120px;
+      height: 120px;
+    }
+  
+    section {
+      padding: 1rem;
+    }
+  
+    .bordered-section {
+      padding: 15px;
+      margin: 1.5rem auto;
+    }
+  
+    .gallery {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .gallery-item img {
+      max-width: 90%;
+    }
+  
+    footer {
+      font-size: 0.9rem;
+    }
+  
+    #theme-toggle {
+      top: 15px;
+      right: 15px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .typing-animation {
+      font-size: 1.2rem;
+    }
+  
+    nav a {
+      font-size: 0.85rem;
+    }
+  
+    .profile-img {
+      width: 100px;
+      height: 100px;
+    }
+  
+    #theme-toggle {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.6rem;
+    }
+  
+    .bordered-section h2 {
+      font-size: 1.1rem;
+    }
+  
+    .bordered-section p,
+    .bordered-section li {
+      font-size: 0.95rem;
+    }
+  }
+  
